@@ -10,14 +10,6 @@ def importar_csv(nombre_archivo):
     except FileNotFoundError:
         print(f"Archivo no encontrado: {nombre_archivo}")
 
-def validar_entrada_menu():
-    while True:
-        opcion = input("Seleccione una opción valida: ")
-        if opcion in menu:
-            return opcion
-        else:
-            print("Opción inválida.")
-
 datos = importar_csv('/content/ANALISIS_DATOS_CLIMATICOS/datos/datos.csv')
 
 meses         = []
@@ -32,6 +24,15 @@ for registro in datos:
         precipitacion.append(float(registro["Valor"]))
 
 menu = ['1', '2', '3']
+
+def validar_entrada_menu():
+    while True:
+        opcion = input("Seleccione una opción valida: ")
+        if opcion in menu:
+            return opcion
+        else:
+            print("Opción inválida.")
+            
 while menu:
     print('''\n ANALISIS DE DATOS CLIMATICOS
     1. ESTADISTICAS PROMEDIO
