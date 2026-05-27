@@ -101,9 +101,11 @@ while menu:
                 sub_opcion = validar_entrada_menu(menu_limites)
                 match sub_opcion:
                     case '1':
-                        pass
+                        print(f"\nTemp. máxima: {max(temperatura):.2f} C — Mes: {meses[temperatura.index(max(temperatura))]}")
+                        print(f"Temp. mínima: {min(temperatura):.2f} C — Mes: {meses[temperatura.index(min(temperatura))]}")
                     case '2':
-                        pass
+                        print(f"\nPrecip. máxima: {max(precipitacion):.2f} mm — Mes: {meses[precipitacion.index(max(precipitacion))]}")
+                        print(f"Precip. mínima: {min(precipitacion):.2f} mm — Mes: {meses[precipitacion.index(min(precipitacion))]}")
                     case '3':
                         print("Volviendo al menú principal...")
                         menu_limites = False
